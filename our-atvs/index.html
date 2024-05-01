@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GARVIT</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script>
+    
+    function buttonCalls(num){
+      shiftCards(num)
+    }
+    
+    function shiftCards(num) {
+            shiftStackLeft('stack1',num);
+            shiftStackRight('stack2',num);
+            console.log(num);
+        }
+
+        function shiftStackLeft(containerId, index) {
+    const cardContainer = document.getElementById(containerId);
+    const cards = cardContainer.querySelectorAll('.card');
+
+    if (cards.length > 0 && index >= 1 && index <= cards.length) {
+        // Hide all cards
+        cards.forEach(card => {
+          
+            card.style.display = 'none';
+            
+        });
+
+        // Show the next card in the stack
+        const nextIndex = (index - 1 + cards.length) % cards.length;
+        const nextCard = cards[nextIndex];
+        nextCard.style.display = 'block';
+    } else {
+        console.log("Invalid index or no cards found in container.");
+    }
+}
+
+
+function shiftStackRight(containerId, index) {
+    const cardContainer = document.getElementById(containerId);
+    const cards = cardContainer.querySelectorAll('.card1');
+
+    if (cards.length > 0) {
+        // Hide all cards
+        cards.forEach(card => {
+            card.style.display = 'none';
+        });
+
+        // Calculate the index of the next card to show
+        const nextIndex = (index - 1 + cards.length) % cards.length;
+
+        // Show the next card in the stack
+        const nextCard = cards[nextIndex];
+        nextCard.style.display = 'block';
+    } else {
+        console.log("No cards found in container.");
+    }
+}
+
+
+        // function shiftStackLeft(containerId,num) {
+        //     const cardContainer = document.getElementById(containerId);
+        //     const topCard = cardContainer.querySelector('.card:nth-child('+num+')');
+
+        //     // Move the top card to the bottom of the stack with a pull-out animation
+        //     topCard.style.transform = 'translateY(100%)';
+        //     setTimeout(() => {
+        //         topCard.remove();
+        //         topCard.style.transform = 'none';
+        //         cardContainer.appendChild(topCard);
+        //     }, 500); // Wait for the transition to complete (0.5s)
+        // }
+
+        // function shiftStackRight(containerId) {
+        //     const cardContainer1 = document.getElementById(containerId);
+        //     const topCard2 = cardContainer1.querySelector('.card1:nth-child(1)');
+
+        //     // Move the top card to the bottom of the stack with a pull-out animation
+        //     topCard2.style.transform = 'translateY(-100%)';
+        //     setTimeout(() => {
+        //         topCard2.remove();
+        //         topCard2.style.transform = 'none';
+        //         cardContainer1.appendChild(topCard2);
+        //     }, 500); // Wait for the transition to complete (0.5s)
+        // }
+          
+        // Array of labels to cycle through
+        // const labels = ["TGR 3.0", "TGR 4.0", "TGR 5.0", "TGR 1.0", "TGR 2.0"];
+        // var currentIndex = 0;
+
+        // function changeLabel() {
+        //   var button = document.getElementById("btnSlideDown");
+
+        //   // Change the label
+        //   button.innerText = labels[currentIndex];
+
+        //   // Increment index or reset to 0 if it reaches the end
+        //   currentIndex = (currentIndex + 1) % labels.length;
+        //       }
+
+        //       // Add a click event listener to the button
+        //       dynamicButton.addEventListener("click", changeLabel);
+
+
+
+        
+</script>
+</head> 
+<body>
+  
+  <header id="home">
+    <div class= "top"  style="position: relative;">
+      <img src="images/logo1.png" height="120px" width="120px" style="position: absolute; top: 10px; left: 10px;" >
+      <div class="title1"><i>GARVIT<div class="subtitle">Motorsports</i></div></div>
+      <!--img class= "title101" src="atv1.png"-->
+      <a href="https://vitbhopal.ac.in">
+      <img src="images/logo2.png" , height="60px", width="120px" style="position: absolute; top: 10px; right: 10px;">
+    </a>
+    </div>
+    <nav class="top-nav">
+      <ul><h2>
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="../about-us/about-us-index.html">About Us</a></li>
+        <li><a href="#main">Our ATVs</a></li>
+        <li><a href="../campaign/campaign-index.html">Campaign</a></li>
+        <li><a href="../sponsors/index.html">Sponsors</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul></h2>
+    </nav>
+  </header>
+  <div class="main" id="main>
+      <div class="main-title">
+        Our ATVs
+      </div>
+  <div class="card-part">
+    
+    <div class="card-container" id="stack1">
+      <div class="card" id="card01" style="background-image: url('images/m.jpg');"></div>
+      <div class="card" id="card02" style="background-image: url('images/g3.jpg');"></div>
+      <div class="card" id="card03"  style="background-image: url('images/posters.png');"></div>
+      <div class="card" id="card04" style="background-image: url('images/p1.png');"></div>
+      <div class="card" id="card05" style="background-image: url('images/p1.png');"></div>
+    </div>
+
+    <div class="card-container" id="stack2">
+      <div class="card1" id="card01">
+          <div class="card-title">TGR 1.0 </div>
+
+
+          <div class="eventname">
+            ATVC
+          </div>
+          <div class="ranks">Electric Run : AIR 3
+            <br>
+                             Overall : AIR 7
+          </div>
+
+      </div>
+      <div class="card1" id="card02">
+        <div class="card-title" >TGR 2.0</div>
+
+        
+        <div class="eventname">
+          eBAJA
+        </div>
+        <div class="ranks">Overall Prelims : AIR 2 <br>
+                          Manufacturing Event : AIR 3 <br>
+                          Cost Event : AIR 5<br>
+                          Overall Static : AIR 6<br>
+                          Brakes Test : AIR 6<br>
+                          Maneuverability Test : AIR 8<br>
+                          Suspension & Traction Test : AIR 9<br>
+                          All Terrain Run : AIR 11<br>
+                          Overall Dynamic : AIR 10<br>
+                          Render Reveal Challenge : AIR 2<br> 
+                                                     Overall : AIR 5
+        </div>
+
+      </div>
+      <div class="card1" id="card03">
+        <div class="card-title">TGR 3.0</div>
+
+        <div class="name"> VIDYUT </div>
+        
+        <div class="eventname">
+          eBAJA
+        </div>
+        <div class="ranks">Manufacturing Report : IR 3 <br>
+                          Sales Report : IR 4 <br>
+                          Design Evaluation : IR 6<br>
+                          Pverall Static : IR15<br>
+                          Maneuverability : IR 14<br>
+                          Endurance: IR 14<br>
+                          Suspension & Traction : IR 17 <br>
+                           Overall : AIR 7
+        </div>
+
+      </div>
+      <div class="card1" id="card04">
+        <div class="card-title">TGR 4.0</div>
+
+        <div class="name"> RUDRA </div>
+        
+        <div class="eventname">
+          eBAJA
+        </div>
+        <div class="ranks">Sales Report : IR 2
+        </div>
+
+      </div>
+
+      <div class="card1" id="card05">
+        <div class="card-title">TGR 5.0</div>
+
+        <div class="name"> GARUDA</div>
+        
+        <div class="eventname">
+          ATVC
+        </div>
+        <div class="ranks">Sales Report : AIR 2
+          <br>
+                           Event is still in progress...
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="button">
+    <button id="btnSlideDown" class="center-button 1" onclick="buttonCalls(1)">TGR 1.0</button>
+    
+    <button id="btnSlideDown" class="center-button 2" onclick="buttonCalls(2)">TGR 2.0</button>
+
+    <button id="btnSlideDown" class="center-button 3" onclick="buttonCalls(3)">TGR 3.0</button>
+
+    <button id="btnSlideDown" class="center-button 4" onclick="buttonCalls(4)">TGR 4.0</button>
+
+    <button id="btnSlideDown" class="center-button 5" onclick="buttonCalls(5)">TGR 5.0</button>
+
+  <script src="script.js"></script>
+  </div>
+
+
+  <div class="redbar-start"></div>
+
+            <div class="wrapper">
+              <span>#</span>
+              <span>I</span>
+              <span>T</span>
+              <span>'</span>
+              <span>s</span>
+              <span>E</span>
+              <span>L</span>
+              <span>E</span>
+              <span>C</span>
+              <span>T</span>
+              <span>R</span>
+              <span>I</span>
+              <span>C</span>
+          </div>
+          <div class="redbar-end"></div>
+
+          <div class="end-part" id="contact">
+            <div class="end-part-container">
+              <div class="left-part">
+                <div class="end-part-heading">Navigate</div>
+                <div class="end-part-content-left">
+                  <a href="#home" style="text-decoration: none;">Home<br></a>
+                  <a href="" style="text-decoration: none;">About Us<br></a>
+                  <a href="" style="text-decoration: none;">Our ATVs<br></a>
+                  <a href="" style="text-decoration: none;">Innovations<br></a>
+                  <a href="" style="text-decoration: none;">Sponsors<br></a>
+                  
+                </div>
+              </div>
+              <div class="redbar-vertical"></div>
+              <div class="right-part">
+                <div class="end-part-heading">Contact-us</div>
+                <div class="end-part-content-right">
+                  <a >&#x2709  teamgarvit@vitbhopal.ac.in<br></a>
+                  <a href="https://goo.gl/maps/mZnxFjqvwQAwRead7", class="fa fa-map-marker" style="text-decoration: none;">  Locate Us</a>
+                  <br>
+                  <a >&#x1F4DE  +91 9110279715<br></a>
+                  <a> &#128222  +91 9319388850<br></a>
+                  
+                </div>
+              </div>
+            </div>
+            </div>
+          <div class="end-end">
+            <div class="end-heading">GarVIT<div class="end-subheading">Motorsports</div></div>
+            <div class="end-phrase">#IT'sELECTRIC</div>
+            <div class="redbar-end"></div>
+            <div class="social-media">
+              <a href="https://www.facebook.com/teamgarvit/"  title="facebook"> 
+                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.instagram.com/teamgarvitracing_tgr/?hl=en" title="instagram">  
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="https://youtube.com/@garvitteam4256" title="youtube">
+                <i class="fa fa-youtube-square" aria-hidden="true"></i>
+              </a>
+              <a href="https://in.linkedin.com/company/team-garvit" title="linkedin">
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="info">
+        <div class="cpr">
+          © Team GarVIT Motorsports, 2024
+        </div>
+        <div class="sdc">
+          Developed and Managed by Software Development Cell, Team GarVIT
+        </div>
+      </div>
+          </div>
+
+  </body>
+  </html>
+
